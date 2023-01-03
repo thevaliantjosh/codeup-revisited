@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intro to HTML</title>
+    <link rel="sylesheet" href="css/intro-to-html.css">
+  <!--Info for web browser goes here-->
+</head>
+<body>
+<!--Actual page content goes here, In the Body
+ You want to avoid adding too much CSS to the body if possible
+ It will apply across your entire website-->
+<div class="page-wrapper">
+  <!--Instead of using the Body to establish the basis for a page, we create a Page Wrapper
+  Responsibilities include:
+  Background elements of the site: color, images, gradients, etc.
+  Establishing a min-height of 100vh. This ensures site-wide background elements cover the entire screen-->
+  <div class="container">
+    <!--Also called a section, the container is a div that vertically separates different areas on the page based on their purpose or topic.
+    It can allow different background colors and properties for each section that help users associate content within it as belonging to the same component
+    Responsibilities include:
+    Background elements of the section. i.e. a header that has a different background color from the page wrapper, with a border underneath
+    Helps with the responsibilities of the Row by aligning its children to the center-->
+    <div class="row">
+      <!--A div with a universal class name, typically called "row".
+      It's sole purpose is establish the maximum width the majority of content will sit within. It prevents the content from reaching the edges of the screen on larger screens and disrupting the intended layout.
+      Multiple Rows can be added to a Container to stack content vertically. If the content doesn't relate to each other, thought, it might be better to use a new container instead
+      Responsibilities include:
+      Establish and standardize the maximus content width for the entire site
+      Combo Classes can be added to change the alignment of the columns within-->
+       <div class="column">
+           <!--Columns are divs taht live directly inside rows. They allow you to separate content out horizontally.
+           By default, they'll take up space evenly with sibling coluns, but can have combo classes addec to change thier behavior and achieve more complex horizontal layouts
+           Responsibilities Include:
+           Separate content horizontally within a row-->
+           <h1>First Column in The First Row</h1>
+           <p>
+               Hello World! Revisiting the Codeup Curriculum!
+           </p>
+       </div>
+
+        <div class="column">
+            <h1>Second Column in The First Row </h1>
+            <p>
+                Separating Content by columns within a row!
+            </p>
+        </div>
+
+    </div><!--End of Row Div-->
+
+  </div><!--End of Container Div-->
+
+</div><!--End of Page Wrapper Div-->
+
+</body>
+</html>
