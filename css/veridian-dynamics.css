@@ -1,0 +1,23 @@
+.page-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #f3f0f0;
+    margin: 5px 2px;
+
+}
+
+.row-header{
+    display: flex;
+    align-items: center;
+    width: 100vw;
+
+}
+
+.column {
+    align-items: center;
+    width: 95%;
+
+}
