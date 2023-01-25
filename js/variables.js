@@ -117,6 +117,143 @@ function MovieRentalAdder(amountOfMovies, numberOfDays){
 
 console.log("You will pay $" + MovieRentalAdder(3, 9) + " for the movie rentals");
 
-/**/
+/*Suppose you're working as a contractor for 3 companies: Google, Amazon and Facebook, they pay you a different rate per hour. Google pays $400, Amazon $380, and Facebook $350. How much will you receive in payment for this week? You worked 10 hours for Facebook, 6 hours for Google and 4 hours for Amazon.*/
+
+// function payCalculator(hourlyRate, hoursWorked){
+//     return hourlyRate * hoursWorked
+// }
+
+// let googlePay = payCalculator(400, 6);
+//
+// let amazonPay = payCalculator(380, 4);
+//
+// let facebookPay = payCalculator(350, 10);
+
+// let weeklyPay = googlePay + amazonPay + facebookPay;
+
+// console.log(weeklyPay);
+
+//Object Oriented method:
+
+const Work = {
+    googlePay: 400,
+    amazonPay: 380,
+    facebookPay: 350,
+    payCalculator(googleHours, amazonHours, facebookHours){
+    return ((Work.googlePay * googleHours) + (Work.amazonPay * amazonHours) + ( Work.facebookPay * facebookHours));
+}
+
+}
+
+console.log("You made a total of: " + "$" + Work.payCalculator(6, 4, 10));
+
+/*A student can be enrolled in a class only if the class is not full and the class schedule does not conflict with her current schedule*/
+
+const Class1 = {
+    courseName: "Bio101",
+    filled: false,
+    amountOfStudents: 15,
+    startTime: "8:00AM",
+
+}
+
+const Class2 = {
+    courseName: "Intro to Awesomeness",
+    filled: true,
+    amountOfStudents: 20,
+    startTime: "9:00AM",
+
+}
+
+const Class3 = {
+    courseName: "Rock appreciation, And Theory",
+    filled: false,
+    amountOfStudents: 21,
+    startTime: "10:00AM",
+
+}
+
+const Class4 = {
+    courseName: "Rock History",
+    filled: false,
+    amountOfStudents: 28,
+    startTime: "10:00AM",
+}
+
+const Class5 = {
+    courseName: "Jazz History ",
+    filled: false,
+    amountOfStudents: 28,
+    startTime: "10:00AM",
+}
+
+const Class6 = {
+    courseName: "Jazz Hands, and How they work ",
+    filled: false,
+    amountOfStudents: 28,
+    startTime: "8:00AM",
+}
+
+const Class7 = {
+    courseName: "The Metal: Learn it!",
+    filled: false,
+    amountOfStudents: 28,
+    startTime: "11:00AM",
+}
+
+//The below object filters out all courses that are not filled and do not have the same start times as an enrolled course.
+
+const currentSchedule = {
+    availableCourses: [
+        Class1,
+        Class2,
+        Class3,
+        Class4,
+        Class5,
+        Class6,
+        Class7,
+    ],
+    enrolledCourses: [],
+    eligibleToEnroll(availableCourses, enrolledCourses){
+        let tenAMCourses = [];
+        let eightAMCourses = [];
+        let elevenAMCourses = [];
+        enrolledCourses = this.enrolledCourses;
+        availableCourses.forEach(course =>{
+            if(course.filled !== true){
+                this.enrolledCourses.push(course);
+            }
+        })//end of first forEach
+        //Array with only the First 10AM Courses
+        tenAMCourses = enrolledCourses.filter(course =>{
+            return course.startTime === "10:00AM";
+        })[0];
+        //Array with only the First 8AM Courses
+        eightAMCourses = enrolledCourses.filter(course =>{
+            return course.startTime === "8:00AM";
+        })[0];
+        //Array with only 11AM Courses
+        elevenAMCourses = enrolledCourses.filter(course =>{
+            return course.startTime === "11:00AM";
+        })
+        let firstClasses = [];
+        firstClasses = [].concat(eightAMCourses, tenAMCourses,  elevenAMCourses)
+        return firstClasses;
+    }//end of eligible to enroll function
+
+}
+
+
+console.log(currentSchedule.eligibleToEnroll(currentSchedule.availableCourses, currentSchedule.enrolledCourses));
+
+
+
+
+
+
+
+
+
+
 
 
