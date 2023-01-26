@@ -133,7 +133,7 @@ console.log("You will pay $" + MovieRentalAdder(3, 9) + " for the movie rentals"
 
 // console.log(weeklyPay);
 
-//Object Oriented method:
+//Object-Oriented method to solve the above problem:
 
 const Work = {
     googlePay: 400,
@@ -248,6 +248,11 @@ console.log(currentSchedule.eligibleToEnroll(currentSchedule.availableCourses, c
 
 
 
+
+
+
+
+
 //Refactoring the Above object to be a little more streamlined
 
 // const scheduleSetter = {
@@ -303,6 +308,89 @@ console.log(currentSchedule.eligibleToEnroll(currentSchedule.availableCourses, c
 
 
 
+/*Question: 3-4 (Working With Data Types, Operators, and Variables) A product offer can be applied only if a person buys more than 2 items, and the offer has not expired. Premium members do not need to buy a specific amount of products.*/
+
+const Customer1 = {
+    username: "shoppett",
+    premium: true,
+    productsBought: 32
+};
+
+const Customer2 = {
+    username: "MrShoppingMan",
+    premium: false,
+    productsBought: 3
+}
+
+const Customer3 = {
+    username: "ILoveFreeFlashLights!",
+    premium: false,
+    productsBought: 1
+}
+
+const Customer4 = {
+    username: "YellowIsMellow",
+    premium: false,
+    productsBought: 1
+}
+
+const productOffer1 = {
+    offer: "Free Flashlight",
+    expired: false
+}
+
+const productOffer2 = {
+    offer: "$10,000 Gift Card",
+    expired: true
+}
+
+function offerProduct(customer, productOffer){
+    let amountToBuy = (3 - customer.productsBought);
+        if (customer.premium === true || customer.productsBought >= 2){
+            return `Congratulations ${customer.username}, You receive a ${productOffer.offer}!`
+        } else if (productOffer.expired === true){
+            return `Sorry ${customer.username}, your ${productOffer.offer} offer has expired!`;
+        } else {
+            return `${customer.username} If you buy ${amountToBuy} more items you can receive a ${productOffer.offer}!`
+        }
+
+}
+
+console.log(offerProduct(Customer1, productOffer1));
+console.log(offerProduct(Customer2, productOffer1));
+console.log(offerProduct(Customer3, productOffer1));
+console.log(offerProduct(Customer4, productOffer2));
 
 
+/*Question 4: (Working With Data Types, Operators, and Variables)
+* the password must be at least 5 characters
+* the password must not include the username
+* the username must be no more than 20 characters
+* neither the username or password can start or end with whitespace
+* */
 
+function passwordChecker(username, password){
+    switch(true){
+        case password.includes(username):
+            return "Please Input a password that does not contain your username"
+        case password.length <= 4:
+            return "Please input a password that is longer than 4 characters"
+        case username.length >=21:
+            return "Please input a username that is no longer than 20 characters"
+        case username.startsWith(" ") || username.endsWith(" ") || password.startsWith(" ") || password.endsWith(" "):
+            return "Please input a Username and Password that does not start or end with a whitespace"
+        default:
+            return "Thank you for inputting your username and password!"
+    }
+}
+
+
+console.log(passwordChecker("thevaliantjosh", "badmamajoshuajamma"));//accepted
+console.log(passwordChecker("thevaliantjosh@gmail.com", "password"));//username longer than 20 characters
+console.log(passwordChecker("thevaliantjosh", "passwordthevaliantjosh!!"));//password contains username
+console.log(passwordChecker(" thevaliantjosh ", " password "));//user or pass starts and ends with whitespace
+console.log(passwordChecker("thevaliantjosh ", "password"));//user or pass starts and ends with whitespace
+console.log(passwordChecker("thevaliantjosh", " password"));//user or pass starts and ends with whitespace
+console.log(passwordChecker("thevaliantjosh ", "password "));//user or pass starts and ends with whitespace
+console.log(passwordChecker(" thevaliantjosh ", " password "));//user or pass starts and ends with whitespace
+console.log(passwordChecker("thevaliantjosh", "password"));//Good password
