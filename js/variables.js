@@ -248,8 +248,57 @@ console.log(currentSchedule.eligibleToEnroll(currentSchedule.availableCourses, c
 
 
 
+//Refactoring the Above object to be a little more streamlined
+
+// const scheduleSetter = {
+//     availableCourses: [Class1, Class2, Class3, Class4, Class5, Class6, Class7],
+//     enrolledCourses: function(){
+//         let enrolledCourses = this.availableCourses.filter((course) => !course.filled);
+//         console.log(enrolledCourses);//enrolled course returns all Classes that are not filled from available courses
+//         let nonConflictingCourses = {};
+//         for (let course of enrolledCourses){
+//            if (!nonConflictingCourses[course.startTime]){
+//                 nonConflictingCourses[course.startTime] = course;
+//             } else {
+//                 enrolledCourses = enrolledCourses.filter((course) => course !== course);
+//             }
+//         }
+//         return enrolledCourses.filter(course => course.startTime >= "8:00AM" && course.startTime <= "11:00AM");
+//     }
+//
+//
+// };
+
+// console.log(scheduleSetter.enrolledCourses());
 
 
+
+//Help from Chat GPT
+//
+// let Class8 = {courseName: "Math", filled: false, amountOfStudents: 20, startTime: "8:00AM"};
+// let Class9 = {courseName: "Science", filled: false, amountOfStudents: 15, startTime: "9:00AM"};
+// let Class10 = {courseName: "English", filled: true, amountOfStudents: 25, startTime: "8:00AM"};
+// let Class11 = {courseName: "History", filled: false, amountOfStudents: 18, startTime: "10:00AM"};
+// let Class12 = {courseName: "Art", filled: false, amountOfStudents: 15, startTime: "9:00AM"};
+// let Class13 = {courseName: "Physical Education", filled: true, amountOfStudents: 30, startTime: "10:00AM"};
+// let Class14 = {courseName: "Music", filled: false, amountOfStudents: 20, startTime: "11:00AM"};
+//
+// const scheduleSetter = {
+//     availableCourses: [Class8, Class9, Class10, Class11, Class12, Class13, Class14],
+//     enrolledCourses() {
+//         let enrolledCourses = this.availableCourses.filter((course) => !course.filled);
+//         let timeMap = {};
+//         for (let course of enrolledCourses) {
+//             if (!timeMap[course.startTime]) {
+//                 timeMap[course.startTime] = course;
+//             } else {
+//                 enrolledCourses = enrolledCourses.filter((c) => c !== course);
+//             }
+//         }
+//         return enrolledCourses.filter(c => c.startTime >= "8:00AM" && c.startTime <= "11:00AM")
+//     }
+// };
+// console.log(scheduleSetter.enrolledCourses());
 
 
 
