@@ -1,8 +1,8 @@
 $(function(){
     // alert("Welcome to Veridian Dynamics!");
-    $('#go-to-top').on("click", function(e){
-        e.preventDefault();
+    $('#go-to-top').click(function(e){
         // alert("You clicked me you fool!");//this works
-        $('html, body').animate({scrollTop: "0"} , 3000);
+        $('.page-wrapper').animate({scrollTop: "0"} , 3000);
+        // $('.page-wrapper').scrollTop();
     })
 })
