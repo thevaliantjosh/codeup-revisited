@@ -52,7 +52,7 @@ function miniMaxSum(arr){
         return sortedItem1 - sortedItem2;
 
     })
-    // console.log(sortedNumbersArray);
+    console.log(sortedNumbersArray);
     let lowestFourTotal = 0;
     let highestFourTotal = 0;
     for (let i = 0; i < sortedNumbersArray.length; i++){
@@ -68,7 +68,7 @@ function miniMaxSum(arr){
     console.log(`${lowestFourTotal} ${highestFourTotal}`);
 }
 
-// console.log(miniMaxSum(shortNumbersArray));
+console.log(miniMaxSum(shortNumbersArray));
 //
 //
 // console.log(miniMaxSum(numbersArray));
@@ -120,3 +120,25 @@ function timeConversion(time){
 // console.log(timeConversion("12:35:45PM"));//good
 
 console.log(timeConversion("06:40:03AM"));
+
+/*Finding the Median of an array*/
+
+function medianOfArray(arr){
+    //creating a variable that sorts the passed in array in ascending order
+    let sortedArray = arr.sort(function(sortedItem1, sortedItem2){
+        return sortedItem1 - sortedItem2;
+    });
+    console.log(sortedArray);//this returns the array sorted;
+    //need to find the median by taking the number of items in the array adding 1 then dividing by 2 to get the index
+
+    let indexOfMedian = ((sortedArray.length + 1) / 2);
+    console.log("The Index to find the median of the Array is " + indexOfMedian);
+
+    return sortedArray.at(indexOfMedian -1);
+}
+
+
+let newNumbersArray = [4, 19, 3, 32, 11];
+let newNumbersArray2 = [5, 3, 1, 82, 56, 99, 32];
+console.log("The median is: " + medianOfArray( newNumbersArray));
+console.log("The median is: " + medianOfArray(newNumbersArray2));
