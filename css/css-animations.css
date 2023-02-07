@@ -72,7 +72,7 @@ p {
 }
 
 .grow:hover {
-    transform: scale(2);
+    transform: scale(150%);
 }
 
 .box > p {

@@ -121,7 +121,8 @@ function timeConversion(time){
 
 console.log(timeConversion("06:40:03AM"));
 
-/*Finding the Median of an array*/
+/*PROBLEM 4:
+Finding the Median of an array*/
 
 function medianOfArray(arr){
     //creating a variable that sorts the passed in array in ascending order
@@ -142,3 +143,45 @@ let newNumbersArray = [4, 19, 3, 32, 11];
 let newNumbersArray2 = [5, 3, 1, 82, 56, 99, 32];
 console.log("The median is: " + medianOfArray( newNumbersArray));
 console.log("The median is: " + medianOfArray(newNumbersArray2));
+
+/*Problem 5
+* Given an array of integers where all elements occur twice, find the unique element*/
+
+let arrayOfIntegersOneUnique = [1, 1, 3, 5, 6, 3, 6];
+
+
+//Method 1: Get Unique Values using a For loop
+
+
+function findUniqueValue(arr){
+    //an empty array to store unique values we find in the array
+    let uniqueValues = [];
+    //a counter to be used in the for loop
+    let count = 0;
+    //a variable to be set to true of false if the element is unique or not
+    let start = false;
+
+    for(let i = 0; i < arr.length; i++){
+
+        for(let j = 0; j < uniqueValues.length; j++){
+            if (arr[i] === uniqueValues[j]){
+                start = true;
+
+            }
+        }
+
+        count++;
+        if (count === 1 && start === false){
+            uniqueValues.push(arr[i]);
+
+        }
+        start = false;
+        count = 0;
+
+    }
+    console.log(uniqueValues);
+
+}
+
+console.log(findUniqueValue(arrayOfIntegersOneUnique));
+
