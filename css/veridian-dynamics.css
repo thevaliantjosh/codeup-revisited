@@ -114,3 +114,5 @@ table tr:nth-child(even){
 .quality-guarantee-row a {
     font-size: 1.5rem;
 }
+
+/*transform: scale(0.5) translate(-100%, -100%);*/
