@@ -150,38 +150,69 @@ console.log("The median is: " + medianOfArray(newNumbersArray2));
 let arrayOfIntegersOneUnique = [1, 1, 3, 5, 6, 3, 6];
 
 
-//Method 1: Get Unique Values using a For loop
+//Method 1: Get Unique Values using a For loop, this will give me one of each unique vale, what I want is the only element that is not duplicated in the array.
+
+
+// function findUniqueValue(arr){
+//     //an empty array to store unique values we find in the array
+//     let uniqueValues = [];
+//     //a counter to be used in the for loop
+//     let count = 0;
+//     //a variable to be set to true of false if the element is unique or not
+//     let start = false;
+//
+//     for(let i = 0; i < arr.length; i++){
+//
+//         for(let j = 0; j < uniqueValues.length; j++){
+//             if (arr[i] === uniqueValues[j]){
+//                 start = true;
+//
+//             }
+//         }
+//
+//         count++;
+//         if (count === 1 && start === false){
+//             uniqueValues.push(arr[i]);
+//
+//         }
+//         start = false;
+//         count = 0;
+//
+//     }
+//     console.log(uniqueValues);
+//
+// }
+//
+// console.log(findUniqueValue(arrayOfIntegersOneUnique));
+
+/*Method 2. Using the filter method
+* The filter() method creates a new array filled with elements that pass a test provided by a function
+* The filter() method does not execute the function for empty elements
+* the filter() method does not change the original array
+* We will use the filter() method, and indexOf() mehods to filter out the non-unique values*/
+
+//Example from geeksforgeeeks.org
+
+let newArray = [1, 2, 2, 4, 5, 6, 6, 7, 8, 8, 8];
+console.log("Before filtering non unique values: " + newArray);
+
+let unique = newArray.filter((value, index, self)=>{
+    return self.indexOf(value) === self.lastIndexOf(value);
+})
+
+console.log("After filtering non unique values: " + unique);
+
 
 
 function findUniqueValue(arr){
-    //an empty array to store unique values we find in the array
-    let uniqueValues = [];
-    //a counter to be used in the for loop
-    let count = 0;
-    //a variable to be set to true of false if the element is unique or not
-    let start = false;
-
-    for(let i = 0; i < arr.length; i++){
-
-        for(let j = 0; j < uniqueValues.length; j++){
-            if (arr[i] === uniqueValues[j]){
-                start = true;
-
-            }
-        }
-
-        count++;
-        if (count === 1 && start === false){
-            uniqueValues.push(arr[i]);
-
-        }
-        start = false;
-        count = 0;
-
-    }
-    console.log(uniqueValues);
-
+    let uniqueValue = arr.filter((value, index, self)=> {
+        return self.indexOf(value) === self.lastIndexOf(value)
+    });
+   return uniqueValue;
 }
 
-console.log(findUniqueValue(arrayOfIntegersOneUnique));
 
+
+
+
+console.log(findUniqueValue(arrayOfIntegersOneUnique));
