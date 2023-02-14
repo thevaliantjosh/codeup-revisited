@@ -216,3 +216,98 @@ function findUniqueValue(arr){
 
 
 console.log(findUniqueValue(arrayOfIntegersOneUnique));
+
+/*PROBLEM 6*/
+
+/*Given a square calculate the absolute difference between the sums of its diagonals
+* ex.
+* 123
+* 456
+* 989
+*
+* diagonal 1: 1 + 5 + 9 =15
+* diagonal 2: 3 + 5 + 9 = 17
+* absolute difference [15 - 17] = 2
+*
+* parameter
+* int arr[n][m]
+*
+* return
+* int: the absolute diagonal difference
+*
+* */
+
+/*NOTES ON TWO-DIMENSIONAL ARRAYS*/
+
+/*need to figure out how to create a two-dimensional array
+   *
+   * A 2D array is a colletion of items taht share a common name
+   * name and they are organized a s a matrix in the form or rows and columns.
+   * the 2d array is an array of arrays, so we create an array of one-dimensianoal array objects.
+   *
+   * example
+   *
+   * 1)Create an array
+   * let normalArray = new Array(2);
+   *
+   * document.write("Creating 2D array <br>");
+   *
+   * 2)Loop to create 2D array using normal arrays
+   * for (let i = 0; i < normalArray.length: i++){
+   *    normalArray[i] = new Array(2);
+   * }
+   *
+   *
+   * let h = 0;
+   *
+   * 3)Loop to initialized 2d array elements
+   *
+   * for(let i = 0; i < 2; i++) {
+   *    for (let j = 0; j < 2; j++) {
+   *        normalArray[i][j] = h++;
+   *    }
+   * }
+   *
+   *
+   * 4)Loop to display the elements of 2D array.
+   *
+   * for(let i = 0; i < 2; i++){
+   *    for(let j = 0; j < 2; j++){
+   *        document.write(normalArray[i][j] + " ");
+   *    }
+   *    document.write("<br>");
+   * }
+   * */
+function diagonalDifference(arr){
+    /*Loop to create 2D array using 1D array*/
+   for(let i = 0; i < arr.length; i++){
+       arr[i] = [];
+   }
+
+   let h = 0;
+
+
+   //Loop to initialize 2D array elements
+    for(let i = 0; i < 3; i++){
+        for (let j = 0; j < 3; j++){
+            arr[i][j] = h++
+        }
+    }
+
+    //Loop to display the elements of 2D array
+
+    for (let i = 0; i < 3; i++){
+        for (let j = 0; j < 3; j++){
+            console.log(arr[i]);
+        }
+        // console.log("\n");
+    }
+
+
+}
+
+//Testing hte diagonalDifference output
+
+
+let matrixMe = [1, 3, 5, 1, 4, 8, 3, 5, 6];
+console.log(diagonalDifference(matrixMe))
