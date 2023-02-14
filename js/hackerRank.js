@@ -278,32 +278,81 @@ console.log(findUniqueValue(arrayOfIntegersOneUnique));
    *    document.write("<br>");
    * }
    * */
+
+//Attempt 1;
+// function diagonalDifference(arr){
+//     /*Loop to create 2D array using 1D array*/
+//    for(let i = 0; i < arr.length; i++){
+//        arr[i] = [];
+//    }
+//
+//    let h = 0;
+//
+//
+//    //Loop to initialize 2D array elements
+//     for(let i = 0; i < 3; i++){
+//         for (let j = 0; j < 3; j++){
+//             arr[i][j] = h++
+//         }
+//     }
+//
+//     //Loop to display the elements of 2D array
+//
+//     for (let i = 0; i < 3; i++){
+//         for (let j = 0; j < 3; j++){
+//             console.log(arr[i]);
+//         }
+//         // console.log("\n");
+//     }
+//
+//
+// }
+
+
+//My Custom solution because 2D arrays are confusing
+
 function diagonalDifference(arr){
-    /*Loop to create 2D array using 1D array*/
-   for(let i = 0; i < arr.length; i++){
-       arr[i] = [];
-   }
+    //slicing out every 3 numbers and putting them in their own array
+    let row1 = arr.slice(0, 3);
+    let row2 = arr.slice(3, 6);
+    let row3 = arr.slice(6, 10);
 
-   let h = 0;
+    //Forming the grid by using the join method, which creates a string joined on an empty space
+    //Lines created with + "\n"
 
 
-   //Loop to initialize 2D array elements
-    for(let i = 0; i < 3; i++){
-        for (let j = 0; j < 3; j++){
-            arr[i][j] = h++
+    let grid = row1.join(" ")+ "\n" + row2.join(" ") +  "\n" + row3.join(" ");
+
+    console.log(typeof(grid));
+    console.log(grid.length);
+
+    //looping through the original array and adding the values of the 1st[0], 5th[4] and 9th[8] for diagonal 1
+    //and will need to do the same with the 3rd[2], 5th[4], and 7th[6] for diagonal two;
+    //Setting Variable for left to right diagonal
+    let diagonalOne = 0;
+    //Setting Variable for right to left diagonal
+    let diagonalTwo = 0;
+    for(let i = 0; i < arr.length; i++){
+        if(i === 0){
+            diagonalOne += arr[i];
+        } else if (i === 2){
+            diagonalTwo += arr[i];
+        } else if (i === 4){
+            diagonalOne += arr[i];
+            diagonalTwo += arr[i];
+        } else if (i === 6){
+            diagonalTwo += arr[i];
+        } else if (i === 8){
+            diagonalOne += arr[i];
         }
+
     }
 
-    //Loop to display the elements of 2D array
-
-    for (let i = 0; i < 3; i++){
-        for (let j = 0; j < 3; j++){
-            console.log(arr[i]);
-        }
-        // console.log("\n");
-    }
-
-
+    let diagonalDifference = diagonalTwo - diagonalOne;
+    console.log("The Number Matrix: " + "\n" + grid);
+    console.log("The sum of Diagonal 1 is: " + diagonalOne);
+    console.log("The sum of Diagonal 2 is: " + diagonalTwo);
+    console.log("The Diagonal differences is: " + diagonalDifference)
 }
 
 //Testing hte diagonalDifference output
