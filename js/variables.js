@@ -407,3 +407,37 @@ console.log(passwordChecker("thevaliantjosh", "password"));//Good password
 * let thisVariableNameIsVeryLong*/
 
 
+/*Explore the difference between the var and let Keywords
+*
+* the "var" keyword lets you easily overwrite variable declarations:
+*
+* The "let" keyword is used to declare variable that can be reassigned, while the "const" keyword is used to declare variables that cannot be reassigned.
+* Both "let" and "const" provide block scope, meaning they are limited ot the
+* block of code where they are declared.
+*
+* The "var" keyword, on the other hand, has function scope, meaning it is available throughout the entire function where it is declared, regardless of
+* nested blocks of code.
+*
+* While "var" can still be used in modern JavaScript, it is generally recommended
+* to use "let" and "const" instead, and they provide more predictable behavior
+* and help prevent common programming errors.
+*
+*
+*
+* */
+
+var camper = "James";
+var camper = "Paul";
+
+let camper1 = "James";
+const camper2 = "David";
+let camper1 = "Simon";//You will now see that the variable camper1 as already been declared and assigned, and is showing as an error;
+camper1 = "Joseph";//Reassigning camper1's name to Joseph
+// camper2 = "Joseph";//This will not allow camper2's name to be set to Joseph;
+console.log(camper1);
+console.log(camper);//You will see here that the camper is now reassigned to "David"
+console.log(camper2);//You will see that camper2's name will always be "David";
+
+
+
+
