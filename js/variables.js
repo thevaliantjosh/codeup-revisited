@@ -394,3 +394,16 @@ console.log(passwordChecker("thevaliantjosh", " password"));//user or pass start
 console.log(passwordChecker("thevaliantjosh ", "password "));//user or pass starts and ends with whitespace
 console.log(passwordChecker(" thevaliantjosh ", " password "));//user or pass starts and ends with whitespace
 console.log(passwordChecker("thevaliantjosh", "password"));//Good password
+
+/*Variable and function names are case sensitive. This means that capitalization matters
+* MYVAR is not the same as MyVar nor myvar. It is possible ot have multiple distinct variables withe the same name but different casing. It is strongly recommended that for the sake of clairty, you don not use this language feature
+*
+* BEST PRACTICE
+*
+* Write Variable names in JavaScript in camelCase. First word lower and each subsequent work Capitalized at the beginning
+*
+* let someVariable;
+* let anotherVariable;
+* let thisVariableNameIsVeryLong*/
+
+
