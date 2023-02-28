@@ -438,6 +438,23 @@ console.log(camper1);
 console.log(camper);//You will see here that the camper is now reassigned to "David"
 console.log(camper2);//You will see that camper2's name will always be "David";
 
-
+/**Declare a Read-Only Variable with the "const" Keyword
+ * "const" does everything "let" will do, with the added bonus that variables
+ * declared using "const" are read-only. They are a constant value, which means
+ * that once a variable is assigned with "const", it cannot be reassigned:
+ *
+ *example:
+ *
+ * const FAV_PET = "Cats";
+ * FAV_PET = "Dogs";
+ *
+ * The console will display an error due ot reassigning the vale of FAV_PET;
+ *
+ * You should always name variables you don't want to reassign using the "const"
+ * keyword. This helps when you accidentally attempt to reassign a variable that is meant to stat constant.
+ *
+ * NOTE: It is common for developers to use uppercase variable identifiers for inmmutalbe values and lowercase or camelCase for mutable values (objects and arrays). You will learn more about objects, arrays, and immutalbe and mutalbe values in later challenges. Also in later challenges, you will see examples of uppercase, lowercase, or camelCase
+ * variable idnetifiers.
+ */
 
 
