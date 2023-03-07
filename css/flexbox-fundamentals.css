@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.column-flexed {
+    background: #BFD45D;
+    border: 2px solid #F8EFD6;
+    padding: 1em;
+}

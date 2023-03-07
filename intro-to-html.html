@@ -11,22 +11,25 @@
  You want to avoid adding too much CSS to the body if possible
  It will apply across your entire website-->
 <div class="page-wrapper">
+    <h1><strong>PAGE WRAPPER</strong></h1>
   <!--Instead of using the Body to establish the basis for a page, we create a Page Wrapper
   Responsibilities include:
   Background elements of the site: color, images, gradients, etc.
   Establishing a min-height of 100vh. This ensures site-wide background elements cover the entire screen-->
   <div class="container">
+      <h1><strong>CONTAINER</strong></h1>
     <!--Also called a section, the container is a div that vertically separates different areas on the page based on their purpose or topic.
     It can allow different background colors and properties for each section that help users associate content within it as belonging to the same component
     Responsibilities include:
     Background elements of the section. i.e. a header that has a different background color from the page wrapper, with a border underneath
     Helps with the responsibilities of the Row by aligning its children to the center-->
     <div class="row">
+        <h1><strong>ROW</strong></h1>
       <!--A div with a universal class name, typically called "row".
       It's sole purpose is establish the maximum width the majority of content will sit within. It prevents the content from reaching the edges of the screen on larger screens and disrupting the intended layout.
       Multiple Rows can be added to a Container to stack content vertically. If the content doesn't relate to each other, thought, it might be better to use a new container instead
       Responsibilities include:
-      Establish and standardize the maximus content width for the entire site
+      Establish and standardize the maximum content width for the entire site
       Combo Classes can be added to change the alignment of the columns within-->
        <div class="column">
            <!--Columns are divs that live directly inside rows. They allow you to separate content out horizontally.
